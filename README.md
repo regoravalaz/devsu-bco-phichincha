@@ -1,9 +1,8 @@
-Proyecto Angular
+# Proyecto Angular
+
 Este es un proyecto Angular para manejar la cartera de productos del Banco Pichichina como prueba para la posición de programador Angular.
 
-# Descripción
-
-Este proyecto es un simple ejemplo de una aplicación web Angular. La aplicación muestra una lista de productos y permite a los usuarios agregar, editar y eliminar productos.
+Es un ejemplo de una aplicación web Angular. La aplicación muestra una lista de productos y permite a los usuarios agregar, editar y eliminar productos.
 
 ## Instalación y ejecución
 
