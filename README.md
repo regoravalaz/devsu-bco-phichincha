@@ -1,5 +1,5 @@
 Proyecto Angular
-Este es un proyecto Angular que sirve como ejemplo de cómo crear un README para un proyecto Angular.
+Este es un proyecto Angular para manejar la cartera de productos del Banco Pichichina como prueba para la posición de programador Angular.
 
 # Descripción
 
@@ -12,7 +12,7 @@ Para instalar y ejecutar el proyecto, siga estos pasos:
 1. Clona el proyecto en tu computadora:
 
 ```
-git clone https://github.com/koiosoft/devsu-test1.git
+git clone https://github.com/regoravalaz/devsu-bco-phichincha.git
 ```
 
 2. Entra en el directorio del proyecto:
@@ -39,6 +39,20 @@ El servidor se iniciará en http://localhost:4200/.
 - Agregar productos
 - Editar productos
 - Eliminar productos
+
+## Para generar data de prueba:
+
+1- Instalar JSON SERVER
+
+```
+npm install -g json-server
+```
+
+2- Ejecutar el script que genera la data de prueba
+
+```
+json-server index.js
+```
 
 ## Licencia
 
