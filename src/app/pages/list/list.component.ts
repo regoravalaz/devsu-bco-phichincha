@@ -1,26 +1,25 @@
-import { Component, OnInit } from '@angular/core';
-import { ConfirmDialogService } from 'src/app/shared/components/confirm-dialog/confirm-dialog.service';
-import { IProduct } from 'src/app/shared/interfaces/product.interface';
-import { ProductService } from 'src/app/shared/services/product.service';
+import { Component, OnInit } from "@angular/core";
+import { ConfirmDialogService } from "src/app/shared/components/confirm-dialog/confirm-dialog.service";
+import { IProduct } from "src/app/shared/interfaces/product.interface";
+import { ProductService } from "src/app/shared/services/product.service";
 
 const pageSize = 6;
 
 const resultDeleteMessageTime = 1500;
 
 @Component({
-  selector: 'app-list',
-  templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css'],
+  selector: "app-list",
+  templateUrl: "./list.component.html",
+  styleUrls: ["./list.component.css"],
 })
 export class ListComponent implements OnInit {
   testImageUrl =
-    'https://www.visa.com.co/dam/VCOM/regional/lac/SPA/Default/Pay%20With%20Visa/Tarjetas/visa-classic-credito-centrada-400x225.jpg';
+    "https://www.visa.com.co/dam/VCOM/regional/lac/SPA/Default/Pay%20With%20Visa/Tarjetas/visa-classic-credito-centrada-400x225.jpg";
 
-  private source: IProduct[] = [];
   _products: IProduct[] = [];
   loading: boolean = true;
   currentPage: number = 0;
-  search: string = '';
+  search: string = "";
   deletionSuccessful: boolean | null = null;
 
   constructor(
@@ -33,11 +32,10 @@ export class ListComponent implements OnInit {
   }
 
   refresh() {
-    this.productService.filter('');
-    this.productService.fetch().subscribe((data) => {
-      if (data) {
+    this.productService.filter("");
+    this.productService.fetch().subscribe((result) => {
+      if (result) {
         this.loading = false;
-        this.source = data;
       }
     });
   }
