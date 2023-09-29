@@ -4,8 +4,8 @@ Este es un proyecto Angular para manejar la cartera de productos del Banco Pichi
 
 Es un ejemplo de una aplicación web Angular. La aplicación muestra una lista de productos y permite a los usuarios agregar, editar y eliminar productos.
 
-** Autor: Roger Zavala **
-** Email: rogerzavala@gmail.com **
+Autor: Roger Zavala
+Email: rogerzavala@gmail.com
 
 ## Instalación y ejecución
 
