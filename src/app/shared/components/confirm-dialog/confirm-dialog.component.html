@@ -1,0 +1,13 @@
+<!-- The Modal -->
+<div id="myModal" class="modal" [style]="showing ? 'display:block' : ''">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="message">
+      <div [innerHTML]="message"></div>
+    </div>
+    <div class="buttons">
+      <button class="cancel" (click)="close()">Cancelar</button>
+      <button class="confirm" (click)="confirm()">Confirmar</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="response" *ngIf="showDeleteResponse">
+    <div class="success" *ngIf="deletionSuccessful">
+      Se han borrado el producto exitosamente.
+    </div>
+    <div class="fail" *ngIf="!deletionSuccessful">
+      Hubo un problema borrando el registro, intente más tarde.
+    </div>
+  </div>
+  <div class="tools">
+    <input type="text" placeholder="Search ..." (input)="onSearch($event)" />
+    <button class="action" [routerLink]="['../products', 'new']">
+      Agregar
+    </button>
+  </div>
+  <div class="datagrid">
+    <app-progress-bar [show]="loading"></app-progress-bar>
+    <table>
+      <thead>
+        <tr>
+          <th class="logo">Logo</th>
+          <th>Nombre del producto</th>
+          <th>Descripción</th>
+          <th>Fecha de liberación</th>
+          <th>Fecha de reestructuración</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of pageData">
+          <td class="logo">
+            <img src="{{ product.logo }}" />
+          </td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.description }}</td>
+          <td>{{ product.releaseCheck }}</td>
+          <td>{{ product.reviewCheck }}</td>
+          <td class="actions">
+            <app-dropdown-menu
+              id="{{ product.id }}"
+              (onDelete)="confirmDelete($event)"
+            ></app-dropdown-menu>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="footer">
+      <div class="total">
+        <span>{{ count }} Resultados</span>
+      </div>
+      <select *ngIf="showPager" class="pager" (change)="onChangePage($event)">
+        <option
+          *ngFor="let item of [].constructor(pageCount); let i = index"
+          value="{{ i + 1 }}"
+        >
+          Página {{ i + 1 }}
+        </option>
+      </select>
+    </div>
+  </div>
+  <app-confirm-dialog></app-confirm-dialog>
+</div>

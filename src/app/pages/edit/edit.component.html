@@ -1,0 +1,140 @@
+<div class="container">
+  <div class="wrapper">
+    <div *ngIf="product" class="form">
+      <div class="header">
+        <h2>Formulario de Registro</h2>
+      </div>
+      <app-progress-bar [show]="loading"></app-progress-bar>
+      <div class="body">
+        <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
+          <div class="row">
+            <div class="field">
+              <label>ID</label>
+              <input
+                type="text"
+                name="id"
+                #id="ngModel"
+                [(ngModel)]="product.id"
+                [class.error]="hasErrors(id)"
+                minlength="3"
+                maxlength="10"
+                required
+                [disabled]="isEditing"
+              />
+              <span class="error" *ngIf="hasErrors(id)">{{
+                getErrorField(id)
+              }}</span>
+            </div>
+            <div class="field">
+              <label>Nombre</label>
+              <input
+                type="text"
+                name="name"
+                #name="ngModel"
+                [(ngModel)]="product.name"
+                [class.error]="hasErrors(name)"
+                minlength="5"
+                maxlength="100"
+                required
+              />
+              <span class="error" *ngIf="hasErrors(name)">{{
+                getErrorField(name)
+              }}</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="field">
+              <label>Descripción</label>
+              <input
+                type="text"
+                name="description"
+                #description="ngModel"
+                [(ngModel)]="product.description"
+                [class.error]="hasErrors(description)"
+                minlength="10"
+                maxlength="200"
+                required
+              />
+              <span class="error" *ngIf="hasErrors(description)">{{
+                getErrorField(description)
+              }}</span>
+            </div>
+            <div class="field">
+              <label>Logo</label>
+              <input
+                type="url"
+                name="logo"
+                #logo="ngModel"
+                [(ngModel)]="product.logo"
+                [class.error]="hasErrors(logo)"
+                pattern="(http[s]?:\/\/.*\.(?:png|jpg|gif|svg|jpeg))"
+                required
+              />
+              <span class="error" *ngIf="hasErrors(logo)">{{
+                getErrorField(logo)
+              }}</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="field">
+              <label>Fecha de liberación</label>
+              <input
+                type="text"
+                name="release-check"
+                #releaseCheck="ngModel"
+                [(ngModel)]="product.releaseCheck"
+                [class.error]="hasErrors(releaseCheck)"
+                min="{{ minDateRelease }}"
+                date-range-constraint
+                required
+              />
+              <span class="error" *ngIf="hasErrors(releaseCheck)">{{
+                getErrorField(releaseCheck)
+              }}</span>
+            </div>
+            <div class="field">
+              <label>Fecha de revisión</label>
+              <input
+                type="text"
+                name="review-check"
+                #reviewCheck="ngModel"
+                [(ngModel)]="product.reviewCheck"
+                [class.error]="hasErrors(reviewCheck)"
+                min="{{ minDateReview }}"
+                [disabled]="isWellFilled(releaseCheck)"
+                date-range-constraint
+                required
+              />
+              <span class="error" *ngIf="hasErrors(reviewCheck)">{{
+                getErrorField(reviewCheck)
+              }}</span>
+            </div>
+          </div>
+          <div class="response">
+            <div class="success" *ngIf="success">
+              Se han procesado los datos correctamente.
+            </div>
+            <div class="fail" *ngIf="failed">
+              Hubo un problema para enviando los datos, intente más tarde
+              verificando los datos.
+            </div>
+          </div>
+          <div class="tools">
+            <button
+              type="button"
+              [routerLink]="['../products']"
+              class="go-back"
+            >
+              Cancelar
+            </button>
+            <button type="button" (click)="reset(productForm)">
+              Reiniciar
+            </button>
+
+            <button class="submit">Enviar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

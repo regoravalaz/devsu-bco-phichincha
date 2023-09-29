@@ -1,0 +1,159 @@
+div.container {
+  margin: 30px 30px;
+  padding: 30px 30px;
+}
+
+div.container input {
+  height: 25px;
+  width: 15em;
+  border: 2px solid #97979755;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+div.container input:focus,
+select:focus {
+  outline: none;
+}
+
+div.container button.action {
+  background-color: #ffdf00;
+  color: black;
+  width: 7em;
+  height: 4em;
+  border: 0px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+div.container div.tools {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+div.container div.datagrid {
+  padding: 25px;
+  background-color: white;
+}
+
+div.container table {
+  background-color: white;
+  width: 100%;
+  border-spacing: 0px;
+}
+
+div.container table tr {
+  height: 60px;
+}
+
+div.container div.datagrid table thead th {
+  border-bottom: 0.5px solid #97979744;
+  background-color: #f9fafc;
+  font-weight: 500;
+  padding: 0px;
+  margin: 0px;
+  text-align: left;
+  padding-left: 10px;
+  color: #525356;
+}
+
+div.container div.datagrid table tbody td {
+  border-bottom: 0.5px solid #97979744;
+  padding: 0px;
+  margin: 0px;
+  text-align: left;
+  padding-left: 10px;
+  color: #525356;
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+
+div.container div.datagrid table tbody td.logo {
+  padding-left: 10px;
+}
+
+div.container div.datagrid table tbody td.logo img {
+  width: 70px;
+  margin: 5px;
+}
+
+div.container div.datagrid table tbody td.actions {
+  padding-right: 20px;
+}
+
+div.container div.datagrid table tbody td.actions span {
+  cursor: pointer;
+}
+
+div.container div.datagrid table tbody td.actions span:after {
+  content: "\22EE";
+  font-size: 22px;
+}
+
+div.container div.datagrid div.footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+div.container div.datagrid div.footer select.pager {
+  /* styling */
+  background-color: white;
+  border: 2px solid #97979755;
+  border-radius: 4px;
+  display: inline-block;
+  font: inherit;
+  line-height: 1.5em;
+  padding: 0.5em 2.5em 0.5em 1em;
+  height: 45px;
+
+  /* reset */
+
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  /*
+  arrow
+  */
+  background-image: linear-gradient(45deg, transparent 50%, rgb(4, 4, 4) 50%),
+    linear-gradient(135deg, rgb(4, 4, 4) 50%, transparent 50%),
+    linear-gradient(to right, White, white);
+  background-position: calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px), 100% 0;
+  background-size: 5px 5px, 5px 5px, 2.5em 2.5em;
+  background-repeat: no-repeat;
+}
+
+div.container div.datagrid div.footer div.total {
+  height: 40px;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  padding-left: 15px;
+}
+
+div.response {
+  width: 100%;
+}
+
+div.response div {
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+div.success {
+  background-color: #00ff0055;
+  color: darkgreen;
+}
+
+div.fail {
+  background-color: #ff000055;
+  color: darkred;
+}
